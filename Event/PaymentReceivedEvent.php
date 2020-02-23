@@ -11,7 +11,7 @@
 namespace Arturwwl\Przelewy24Bundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
-use Arturwwl\Przelewy24Bundle\Model\ModelInterface;
+use Arturwwl\Przelewy24Bundle\Model\PaymentInterface;
 
 class PaymentReceivedEvent extends Event implements PaymentEventInterface
 {
@@ -22,7 +22,7 @@ class PaymentReceivedEvent extends Event implements PaymentEventInterface
         return $this->payment;
     }
 
-    public function setPayment(ModelInterface $payment)
+    public function setPayment(PaymentInterface $payment)
     {
         $this->payment = $payment;
 

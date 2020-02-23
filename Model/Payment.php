@@ -10,7 +10,7 @@
 
 namespace Arturwwl\Przelewy24Bundle\Model;
 
-class Payment implements ModelInterface
+class Payment implements PaymentInterface
 {
     /**
      * @var string

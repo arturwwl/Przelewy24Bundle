@@ -11,7 +11,7 @@
 namespace Arturwwl\Przelewy24Bundle\Model;
 
 
-interface ModelInterface
+interface PaymentInterface
 {
     /**
      * @return string

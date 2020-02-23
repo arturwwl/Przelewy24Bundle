@@ -11,12 +11,12 @@
 namespace Arturwwl\Przelewy24Bundle\Event;
 
 
-use Arturwwl\Przelewy24Bundle\Model\ModelInterface;
+use Arturwwl\Przelewy24Bundle\Model\PaymentInterface;
 
 interface PaymentEventInterface
 {
     /**
-     * @return ModelInterface
+     * @return PaymentInterface
      */
     public function getPayment();
 }
