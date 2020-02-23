@@ -13,7 +13,7 @@ namespace Arturwwl\Przelewy24Bundle\Processor;
 use Arturwwl\Przelewy24Bundle\Exception\Exception;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Arturwwl\Przelewy24Bundle\Model\Payment;
-use Arturwwl\Przelewy24Bundle\Event\PaymentRecivedEvent;
+use Arturwwl\Przelewy24Bundle\Event\PaymentReceivedEvent;
 
 class VerifyProcessor implements ProcessorInterface
 {
@@ -48,7 +48,7 @@ class VerifyProcessor implements ProcessorInterface
 
         $payment = new Payment();
         $payment->setSessionId($this->sessionId);
-        $event = new PaymentRecivedEvent();
+        $event = new PaymentReceivedEvent();
         $event->setPayment($payment);
         return $this->eventDispatcher->dispatch('przelewy24.event.payment_success', $event);
     }
