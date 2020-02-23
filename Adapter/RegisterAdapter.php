@@ -35,7 +35,6 @@ class RegisterAdapter extends Przelewy24AbstractAdapter implements AdapterInterf
      */
     public function getContents()
     {
-
         $client = new Client();
         $response = $client->request('POST', $this->merchant->getBaseUri() . $this->registerPath, [
             'form_params' => [
