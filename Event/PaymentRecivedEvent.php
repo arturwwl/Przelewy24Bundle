@@ -13,7 +13,7 @@ namespace Arturwwl\Przelewy24Bundle\Event;
 use Symfony\Component\EventDispatcher\Event;
 use Arturwwl\Przelewy24Bundle\Model\ModelInterface;
 
-class PaymentRecivedEvent extends Event implements PaymentEventInterfce
+class PaymentRecivedEvent extends Event implements PaymentEventInterface
 {
     private $payment;
 

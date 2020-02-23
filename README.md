@@ -105,13 +105,13 @@ class AppController extends Controller
 ```php
 namespace AppBundle\EventListener\Przelewy24;
 
-use Arturwwl\Przelewy24Bundle\Event\PaymentEventInterfce;
+use Arturwwl\Przelewy24Bundle\Event\PaymentEventInterface;
 
 class PaymentSuccessListener
 {
     // ..
     
-    public function onPrzelewy24EventPaymentSuccess(PaymentEventInterfce $event)
+    public function onPrzelewy24EventPaymentSuccess(PaymentEventInterface $event)
     {
         $token = $event->getPayment()->getSessionId();
 
