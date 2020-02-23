@@ -1,9 +1,9 @@
 <?php
 
-namespace Allset\Przelewy24Bundle;
+namespace Arturwwl\Przelewy24Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AllsetPrzelewy24Bundle extends Bundle
+class ArturwwlPrzelewy24Bundle extends Bundle
 {
 }

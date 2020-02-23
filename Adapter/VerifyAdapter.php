@@ -1,14 +1,14 @@
 <?php
 /*
- * This file is part of the AllsetPrzelewy24Bundle package.
+ * This file is part of the ArturwwlPrzelewy24Bundle package.
  *
- * (c) Allset <https://allset.pl/>
+ * (c) Arturwwl <https://arturwwl.pl/>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Allset\Przelewy24Bundle\Adapter;
+namespace Arturwwl\Przelewy24Bundle\Adapter;
 
 use GuzzleHttp\Client;
 
@@ -20,7 +20,7 @@ class VerifyAdapter extends Przelewy24AbstractAdapter implements AdapterInterfac
     public function getContents()
     {
         $client = new Client();
-        $response = $client->request('POST', 'https://sandbox.przelewy24.pl/trnVerify', [
+        $response = $client->request('POST', $this->merchant->getBaseUri().'trnVerify', [
             'form_params' => [
                 'p24_merchant_id' => $this->merchant->getMerchantId(),
                 'p24_pos_id' => $this->merchant->getMerchantId(),
@@ -30,7 +30,7 @@ class VerifyAdapter extends Przelewy24AbstractAdapter implements AdapterInterfac
                 'p24_order_id' => $this->status->getOrderId(),
                 'p24_sign' => md5(
                     $this->status->getSessionId() . '|' .
-                    $this->merchant->getMerchantId() . '|' .
+                    $this->status->getOrderId() . '|' .
                     $this->status->getAmount() . '|' .
                     $this->status->getCurrency() . '|' .
                     $this->merchant->getCrc()

@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="allset_przelewy24_status" path="/p24-status">
-        <default key="_controller">AllsetPrzelewy24Bundle:Status:getStatus</default>
+    <route id="arturwwl_przelewy24_status" path="/p24-status">
+        <default key="_controller">ArturwwlPrzelewy24Bundle:Status:getStatus</default>
     </route>
 </routes>

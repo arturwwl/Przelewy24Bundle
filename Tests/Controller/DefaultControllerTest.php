@@ -1,6 +1,6 @@
 <?php
 
-namespace Allset\Przelewy24Bundle\Tests\Controller;
+namespace Arturwwl\Przelewy24Bundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

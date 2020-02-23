@@ -1,14 +1,14 @@
 <?php
 /*
- * This file is part of the AllsetPrzelewy24Bundle package.
+ * This file is part of the ArturwwlPrzelewy24Bundle package.
  *
- * (c) Allset <https://allset.pl/>
+ * (c) Arturwwl <https://arturwwl.pl/>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Allset\Przelewy24Bundle\DependencyInjection;
+namespace Arturwwl\Przelewy24Bundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -26,7 +26,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('allset_przelewy24');
+        $rootNode = $treeBuilder->root('arturwwl_przelewy24');
 
         $rootNode
             ->children()

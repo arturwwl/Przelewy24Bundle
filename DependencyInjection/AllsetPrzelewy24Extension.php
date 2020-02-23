@@ -1,13 +1,13 @@
 <?php
 /*
- * This file is part of the AllsetPrzelewy24Bundle package.
+ * This file is part of the ArturwwlPrzelewy24Bundle package.
  *
- * (c) Allset <https://allset.pl/>
+ * (c) Arturwwl <https://arturwwl.pl/>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Allset\Przelewy24Bundle\DependencyInjection;
+namespace Arturwwl\Przelewy24Bundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class AllsetPrzelewy24Extension extends Extension
+class ArturwwlPrzelewy24Extension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -32,7 +32,7 @@ class AllsetPrzelewy24Extension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $definition = $container->getDefinition('Allset\Przelewy24Bundle\Creator\MerchantCreator');
+        $definition = $container->getDefinition('Arturwwl\Przelewy24Bundle\Creator\MerchantCreator');
         $definition->replaceArgument(0, $config['sandbox']);
         $definition->replaceArgument(1, $config['merchant_id']);
         $definition->replaceArgument(2, $config['crc_key']);

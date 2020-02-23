@@ -1,17 +1,17 @@
 <?php
 /*
- * This file is part of the AllsetPrzelewy24Bundle package.
+ * This file is part of the ArturwwlPrzelewy24Bundle package.
  *
- * (c) Allset <https://allset.pl/>
+ * (c) Arturwwl <https://arturwwl.pl/>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Allset\Przelewy24Bundle\Creator;
+namespace Arturwwl\Przelewy24Bundle\Creator;
 
-use Allset\Przelewy24Bundle\Model\Status;
-use Allset\Przelewy24Bundle\Processor\RequestProcessor;
+use Arturwwl\Przelewy24Bundle\Model\Status;
+use Arturwwl\Przelewy24Bundle\Processor\RequestProcessor;
 
 class StatusCreator implements CreatorInterface
 {

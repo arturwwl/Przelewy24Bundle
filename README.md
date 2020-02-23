@@ -1,9 +1,9 @@
-# Allset Przelewy24 Bundle
+# Arturwwl Przelewy24 Bundle
 This is  **superb easy to use** Przelewy24 Bundle with bulit-in Symfony Events.
 
 ## Instalation
 ```
-composer require allset/przelewy24-bundle
+composer require arturwwl/przelewy24-bundle
 ```
 
 and then update your `AppKernel.php`:
@@ -16,7 +16,7 @@ class AppKernel extends Kernel
     {
         $bundles = [
 		// ...
-            new Allset\Przelewy24Bundle\AllsetPrzelewy24Bundle(),
+            new Arturwwl\Przelewy24Bundle\ArturwwlPrzelewy24Bundle(),
 		// ...
         ];
 	}
@@ -26,16 +26,16 @@ Than add to your `routing.yml` file:
 
 ```yaml
 #app/config/routing.yml
-allset_przelewy24:
-    resource: "@AllsetPrzelewy24Bundle/Resources/config/routing.xml"
+arturwwl_przelewy24:
+    resource: "@ArturwwlPrzelewy24Bundle/Resources/config/routing.xml"
 ```
 
 If you want to have access to Test Tools add this to `routing_dev.yml`:
 
 ```yaml
 #app/config/routing_dev.yml
-allset_przelewy24:
-    resource: "@AllsetPrzelewy24Bundle/Resources/config/routing_dev.xml"
+arturwwl_przelewy24:
+    resource: "@ArturwwlPrzelewy24Bundle/Resources/config/routing_dev.xml"
 ```
 
 ## Requirements
@@ -46,7 +46,7 @@ allset_przelewy24:
 Add to your config folowing lines:
 ```yaml
 #app/config/config.yml
-allset_przelewy24:
+arturwwl_przelewy24:
     sandbox: true #or false
     merchant_id: <your-merchant-id>
     crc_key: <your-crc>
@@ -58,8 +58,8 @@ In your controller.
 ```php
 // ...
 
-use Allset\Przelewy24Bundle\Factory\ProcessFactory;
-use Allset\Przelewy24Bundle\Model\Payment;
+use Arturwwl\Przelewy24Bundle\Factory\ProcessFactory;
+use Arturwwl\Przelewy24Bundle\Model\Payment;
 
 // ...
 
@@ -105,7 +105,7 @@ class AppController extends Controller
 ```php
 namespace AppBundle\EventListener\Przelewy24;
 
-use Allset\Przelewy24Bundle\Event\PaymentEventInterfce;
+use Arturwwl\Przelewy24Bundle\Event\PaymentEventInterfce;
 
 class PaymentSuccessListener
 {
@@ -123,13 +123,13 @@ class PaymentSuccessListener
 
 ## Developer Tools
 ##### Testing connection
-To access tests you have to add  `@AllsetPrzelewy24Bundle/Resources/config/routing_dev.xml` to your `rounting_dev.yml` file. (check out Instaltion chapter).  
+To access tests you have to add  `@ArturwwlPrzelewy24Bundle/Resources/config/routing_dev.xml` to your `rounting_dev.yml` file. (check out Instaltion chapter).  
   
-After that you have access to `allset_przelewy24_test` route or simpler go to `/p24-test` path and checkout the results.
+After that you have access to `arturwwl_przelewy24_test` route or simpler go to `/p24-test` path and checkout the results.
 
 ##### Simulating Payment Success
 Due to Przelewy24 native API you are unable to get success response on your localhost, but you can simulate it with Simulating Payment Success Tool.  
   
-To access simulating you have to add  `@AllsetPrzelewy24Bundle/Resources/config/routing_dev.xml` to your `rounting_dev.yml` file. (check out Instaltion chapter).  
+To access simulating you have to add  `@ArturwwlPrzelewy24Bundle/Resources/config/routing_dev.xml` to your `rounting_dev.yml` file. (check out Instaltion chapter).  
   
-After that you can simply go to `/p24-fake-success/{sessionId}` path or redirect to route `allset_przelewy24_fake_success` to make bundle to trigger `przelewy24.event.payment_success` event.
+After that you can simply go to `/p24-fake-success/{sessionId}` path or redirect to route `arturwwl_przelewy24_fake_success` to make bundle to trigger `przelewy24.event.payment_success` event.

@@ -7,9 +7,9 @@
     <services>
         <defaults autowire="true" autoconfigure="true" public="false"/>
 
-        <prototype namespace="Allset\Przelewy24Bundle\" resource="../../" exclude="../../{Entity,Migrations,Tests}"/>
+        <prototype namespace="Arturwwl\Przelewy24Bundle\" resource="../../" exclude="../../{Entity,Migrations,Tests}"/>
 
-        <service id="Allset\Przelewy24Bundle\Creator\MerchantCreator" public="false">
+        <service id="Arturwwl\Przelewy24Bundle\Creator\MerchantCreator" public="false">
             <argument></argument>
             <argument></argument>
             <argument></argument>

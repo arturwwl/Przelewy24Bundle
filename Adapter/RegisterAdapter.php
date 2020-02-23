@@ -1,14 +1,14 @@
 <?php
 /*
- * This file is part of the AllsetPrzelewy24Bundle package.
+ * This file is part of the ArturwwlPrzelewy24Bundle package.
  *
- * (c) Allset <https://allset.pl/>
+ * (c) Arturwwl <https://arturwwl.pl/>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Allset\Przelewy24Bundle\Adapter;
+namespace Arturwwl\Przelewy24Bundle\Adapter;
 
 use GuzzleHttp\Client;
 use Symfony\Component\Routing\RouterInterface;
@@ -48,7 +48,7 @@ class RegisterAdapter extends Przelewy24AbstractAdapter implements AdapterInterf
                 'p24_description' => $this->payment->getDescription(),
                 'p24_email' => $this->payment->getEmail(),
                 'p24_url_return' => $this->payment->getReturnUrl(),
-                'p24_url_status' => $this->router->generate('allset_przelewy24_status', [], 0),
+                'p24_url_status' => $this->router->generate('arturwwl_przelewy24_status', [], 0),
                 'p24_sign' =>
                     md5(
                         $this->payment->getSessionId() . '|' .

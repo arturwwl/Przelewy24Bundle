@@ -1,5 +1,5 @@
 {
-    "name": "allset/przelewy24-bundle",
+    "name": "arturwwl/przelewy24-bundle",
     "description": "This is Symfony 3.3+ P24 Bundle.",
     "type": "symfony-bundle",
     "license": [
@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Allset\\Przelewy24Bundle\\": ""
+            "Arturwwl\\Przelewy24Bundle\\": ""
         }
     },
     "extra": {
