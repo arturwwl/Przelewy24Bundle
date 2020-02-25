@@ -65,7 +65,11 @@ class ProcessFactory
         $result = $this->registerAdapter->getContents();
 
         $this->processProcessor->setString($result);
-        return $this->processProcessor->process();
+        $url = $this->processProcessor->process();
+
+        $urlExploded = explode('/', $url);
+        $this->payment->setOrderId(end($urlExploded));
+        return $url;
     }
 
     /**

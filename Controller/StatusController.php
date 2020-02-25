@@ -27,9 +27,12 @@ class StatusController extends Controller
     {
         $result = $verifyFactory->create();
 
-
+        //result could not be parsed
+//        return $this->render('@ArturwwlPrzelewy24/testResult.html.twig', [
+//            'result' => $result
+//        ]);
         return $this->render('@ArturwwlPrzelewy24/testResult.html.twig', [
-            'result' => $result
+            'result' => 'test'
         ]);
     }
 }
