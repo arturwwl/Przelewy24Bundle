@@ -45,6 +45,11 @@ class Payment implements PaymentInterface
     /**
      * @var string
      */
+    protected $statusUrl;
+
+    /**
+     * @var string
+     */
     protected $orderId;
 
     /**
@@ -138,6 +143,24 @@ class Payment implements PaymentInterface
     public function setReturnUrl($returnUrl)
     {
         $this->returnUrl = $returnUrl;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatusUrl()
+    {
+        return $this->statusUrl;
+    }
+
+    /**
+     * @param $statusUrl
+     * @return $this
+     */
+    public function setStatusUrl($statusUrl)
+    {
+        $this->statusUrl = $statusUrl;
         return $this;
     }
 

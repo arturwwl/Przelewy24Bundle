@@ -39,11 +39,11 @@ arturwwl_przelewy24:
 ```
 
 ## Requirements
-*Symfony 3.3++* (becouse bundle is using Symfony Service Autowire)  
+*Symfony 3.3++* (because bundle is using Symfony Service Autowire)  
 *Guzzle ^6.3* (already included in composer.json)
 
 ## Config
-Add to your config folowing lines:
+Add to your config following lines:
 ```yaml
 #app/config/config.yml
 arturwwl_przelewy24:
@@ -71,7 +71,9 @@ class AppController extends Controller
     public function processAction(ProcessFactory $processFactory)
     {
 	    $order = // ... - You are creating your order here  
-		
+        $merchantId = $order->getMerchantId();
+        $crcKey = $order->getCrcKey();
+        		
         $payment = new Payment();
         $payment
             ->setCurrency('PLN')
@@ -79,10 +81,11 @@ class AppController extends Controller
             ->setAmount($order->getAmount())
             ->setDescription($order->getDesc())
             ->setEmail($order->getEmail())
-            ->setReturnUrl($this->generateUrl('return', [], 0)); // use following syntax to genreate absolute url
+            ->setStatusUrl($this->generateUrl('status'))
+            ->setReturnUrl($this->generateUrl('return', [], 0)); // use following syntax to generate absolute url
 
         $processFactory->setPayment($payment);
-        $url = $processFactory->createAndGetUrl();
+        $url = $processFactory->createAndGetUrl($merchantId, $crcKey);
 
 
         return $this->redirect($url);
@@ -101,7 +104,7 @@ class AppController extends Controller
             - { name: kernel.event_listener, event: przelewy24.event.payment_success }
 ```
 
-##### 3. Do what only you want with your succesed payment
+##### 3. Do what only you want with your succeeded payment
 ```php
 namespace AppBundle\EventListener\Przelewy24;
 

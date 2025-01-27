@@ -25,7 +25,7 @@ class StatusController extends Controller
      */
     public function getStatusAction(VerifyFactory $verifyFactory)
     {
-        $result = $verifyFactory->create();
+        $result = $verifyFactory->create(null, null);
 
         //result could not be parsed
 //        return $this->render('@ArturwwlPrzelewy24/testResult.html.twig', [

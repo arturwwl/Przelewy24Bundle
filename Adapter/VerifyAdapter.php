@@ -20,7 +20,7 @@ class VerifyAdapter extends Przelewy24AbstractAdapter implements AdapterInterfac
     public function getContents()
     {
         $client = new Client();
-        $response = $client->request('POST', $this->merchant->getBaseUri().'trnVerify', [
+        $response = $client->request('POST', $this->merchant->getBaseUri(). $this->verifyPath, [
             'form_params' => [
                 'p24_merchant_id' => $this->merchant->getMerchantId(),
                 'p24_pos_id' => $this->merchant->getMerchantId(),

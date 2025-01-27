@@ -47,7 +47,8 @@ class RegisterAdapter extends Przelewy24AbstractAdapter implements AdapterInterf
                 'p24_description' => $this->payment->getDescription(),
                 'p24_email' => $this->payment->getEmail(),
                 'p24_url_return' => $this->payment->getReturnUrl(),
-                'p24_url_status' => $this->router->generate('arturwwl_przelewy24_status', [], 0),
+//                'p24_url_status' => $this->router->generate('arturwwl_przelewy24_status', [], 0),//TODO: custom
+                'p24_url_status' => $this->payment->getStatusUrl(),
                 'p24_sign' =>
                     md5(
                         $this->payment->getSessionId() . '|' .

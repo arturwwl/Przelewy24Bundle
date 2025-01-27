@@ -52,12 +52,25 @@ class ProcessFactory
     }
 
     /**
+     * @param $merchantId
+     * @param $crc
      * @return string
      * @throws \Exception
      */
-    public function createAndGetUrl()
+    public function createAndGetUrl($merchantId, $crc): string
     {
         $merchant = $this->merchantCreator->create();
+
+        if ($merchantId)
+        {
+            $merchant->setMerchantId($merchantId);
+            $merchant->setPosId($merchantId);
+        }
+
+        if($crc)
+        {
+            $merchant->setCrc($crc);
+        }
 
         $this->registerAdapter->setMerchant($merchant);
         $this->registerAdapter->setPayment($this->payment);

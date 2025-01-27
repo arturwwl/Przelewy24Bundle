@@ -55,13 +55,25 @@ class VerifyFactory
      * @return string
      * @throws \Exception
      */
-    public function create()
+    public function create($merchantId, $crc)
     {
         $status = $this->statusCreator->create();
 
         $this->verifyAdapter->setStatus($status);
 
         $merchant = $this->merchantCreator->create();
+
+        if ($merchantId)
+        {
+            $merchant->setMerchantId($merchantId);
+            $merchant->setPosId($merchantId);
+        }
+
+        if($crc)
+        {
+            $merchant->setCrc($crc);
+        }
+
         $this->verifyAdapter->setMerchant($merchant);
 
         $result = $this->verifyAdapter->getContents();
