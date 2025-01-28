@@ -55,7 +55,7 @@ class VerifyFactory
      * @return string
      * @throws \Exception
      */
-    public function create($merchantId, $crc)
+    public function create($merchantId = null, $crc = null)
     {
         $status = $this->statusCreator->create();
 

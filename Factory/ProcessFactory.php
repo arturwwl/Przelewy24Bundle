@@ -57,7 +57,7 @@ class ProcessFactory
      * @return string
      * @throws \Exception
      */
-    public function createAndGetUrl($merchantId, $crc): string
+    public function createAndGetUrl($merchantId = null, $crc = null): string
     {
         $merchant = $this->merchantCreator->create();
 
